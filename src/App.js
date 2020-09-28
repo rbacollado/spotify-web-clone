@@ -10,7 +10,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 const spotifyApi = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useStateValue();
+  const [{ user, token, playlists }, dispatch] = useStateValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -33,9 +33,15 @@ function App() {
         });
       });
     }
-
-    console.log("hash:", hash);
+    spotifyApi.getUserPlaylists().then((playlists) => {
+      dispatch({
+        type: "SET_PLAYLISTS",
+        playlists: playlists,
+      });
+    });
   }, []);
+
+  console.log(playlists);
 
   return (
     <div className="app">
