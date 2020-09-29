@@ -23,18 +23,21 @@ function Footer() {
           alt=""
         />
         <div className="footer__songInfo">
-          <h4>Yeah</h4>
+          <h4>Anywhere With You</h4>
           <p>Usher</p>
         </div>
       </div>
 
       <div className="footer__center">
-        <ShuffleIcon className="footer__green" />
+        <ShuffleIcon className="footer__icon" />
+
         <SkipPreviousIcon className="footer__icon" />
+
         <PlayCircleOutlineIcon fontSize="large" className="footer__icon" />
 
         <SkipNextIcon className="footer__icon" />
-        <RepeatIcon className="footer__green" />
+
+        <RepeatIcon className="footer__icon" />
       </div>
 
       <div className="footer__right">

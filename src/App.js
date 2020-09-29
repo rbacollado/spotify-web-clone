@@ -33,15 +33,23 @@ function App() {
         });
       });
     }
+
     spotifyApi.getUserPlaylists().then((playlists) => {
       dispatch({
         type: "SET_PLAYLISTS",
         playlists: playlists,
       });
     });
+
+    spotifyApi.getPlaylist("37i9dQZEVXcLXGfDlEKwbx").then((response) => {
+      dispatch({
+        type: "SET_DISCOVER_WEEKLY",
+        discover_weekly: response,
+      });
+    });
   }, []);
 
-  console.log(playlists);
+  // console.log(playlists);
 
   return (
     <div className="app">
